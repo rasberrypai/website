@@ -19,3 +19,32 @@
   float: left;
   margin: 0px 5px 0px 5px;
 }
+.about-intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  .about-img-container {
+    margin-right: 25px;
+    width: 22.5%;
+    height: 22.5%;
+    .about-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+  .about-name {
+    font-size: 1.625rem;
+    font-weight: 700;
+  }
+  .about-row {
+    display: inline-flex;
+    margin-bottom: 10px;
+    .about-row-left {
+      margin-right: 20px;
+    }
+    .about-row-right {
+    }
+  }
+}
