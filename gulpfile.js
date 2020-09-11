@@ -5,12 +5,12 @@ const del = require('del');
 gulp.task('styles', () => {
     return gulp.src('sass/**/styles.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./assets/css/'));
+        .pipe(gulp.dest('./src/files/css/'));
 });
 
 gulp.task('clean', () => {
     return del([
-	'./assets/css/**',
+	'./src/files/css/**',
     ]);
 });
 
