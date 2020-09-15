@@ -1,0 +1,6 @@
+*.DS_STORE
+upload
+id_rsa_oci
+id_rsa_oci.pub
+gulp-sass/node_modules/
+gulp-sass/package*

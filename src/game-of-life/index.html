@@ -5,7 +5,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="../files/css/minima/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
   </head>
 
   <body>
@@ -29,7 +31,7 @@
             <!--nav bar/hamburger menu content-->
             <div class="trigger">
                 <!--<a class="page-link" href="rasberrypai.github.io/website">Projects</a>-->
-                <a class="page-link" href=".">About Me</a>
+                <a class="page-link" href="../about">About Me</a>
             </div>
           </nav>
       </div>
@@ -40,69 +42,31 @@
         <article class="post">
 
           <header class="post-header">
-            <h1 class="post-title">About</h1>
+            <h1 class="post-title">Conway's Game of Life</h1>
+            <p class="post-meta">September 12, 2020</p>
           </header>
-
           <div class="post-content">
-            <div class="about-intro">
-              <div class="about-img-container">
-                <img class="about-img" src ="../files/images/me.jpeg">
-              </div>
-              <div id="about-intro-info">
-                <p class="about-name">Ajay Pai</p>
-                <div class="about-row">
-                  <div class="about-row-left">
+            <div id="game-of-life-flex-box">
+              <div id="game-of-life-container">
+                <div id="game-of-life-canvas"></div>
+                <div id="game-of-life-ui"</div>
+                  <ul id="game-of-life-buttons">
+                    <li><button class="game-of-life-button" onclick="Play()" style="margin-right: 5px">Play</button></li>
+                    <li><button class="game-of-life-button" onclick="Pause()" style="margin-right: 5px">Pause</button></li>
+                    <li><button class="game-of-life-button" onclick="Clear()">Clear</button></li>
+                  </ul>
+                  <ul id="game-of-life-sliders">
                     <li>
-                      <strong>School:</strong> University of Washington
+                      <label for="size-slider">Size:</label>
+                      <input type="range" min="13" max="50" value="25" class="game-of-life-slider" id="size-slider" onchange="ChangeSize()" style="margin-right: 5px">
                     </li>
                     <li>
-                      <strong>Major:</strong> B.S. Computer Science
+                      <label for="speed-slider">Speed:</label>
+                      <input type="range" min="1" max="31" value="16" class="game-of-life-slider" id="speed-slider" onchange="ChangeSpeed()">
                     </li>
-                    <li>
-                      <strong>Age:</strong> 19
-                    </li>
-                  </div>
-                  <div class="about-row-right">
-                    <li>
-                      <strong>Graduation Year:</strong> 2023
-                    </li>
-                    <li>
-                      <strong>Email:</strong> <a class="u-email" href="mailto:ajay.rohan.pai@gmail.com">ajay.rohan.pai@gmail.com</a>
-                    </li>
-                    <li>
-                      <strong>City:</strong> Seattle, WA
-                    </li>
-                  </div>
+                  </ul>
                 </div>
-                <a style="display: block;" href="../resume.pdf" target="_blank">Check out my full resume</a>
               </div>
-            </div>
-            <p>Hi, thanks for stopping by! My name is Ajay Pai and I am a computer science student at the University of Washington.
-              I built this site in the fall of 2020 to share my <a href="../projects">projects</a>, thoughts and ideas.
-              My hobbies and skillset mostly revolve around technology but, I'm always open to learning new things and pursuing new opportunities.
-              You can contact me through <a href="mailto:ajay.rohan.pai@gmail.com">email</a> or find me on <a href="https://github.com/rasberrypai" target="_blank">github</a> or <a href="https://www.linkedin.com/in/ajay-pai-974201189/" target="_blank">linkedin.</a>
-            </p>
-            <div>
-              <strong>Some of my interests include:</strong>
-              <ul>
-                <li>
-                  Robotics (<a href="https://www.youtube.com/watch?v=n_6p-1J551Y" target="_blank">Dream project</a>)
-                </li>
-                <li>
-                  Chess (<a href="https://chess.com/play/rasberrypai" target="_blank">Play me</a>)
-                </li>
-                <li>
-                  Food (<a href="https://tasty.co/recipe/hainanese-chicken-rice" target="_blank">Favorite dish</a>)
-                </li>
-                <li>
-                  Books<!-- (<a href="../books">Check out what I'm reading</a>) -->
-                </li>
-                <!--add this when i make spotify bot
-                <li>
-                  Music (<a href="pages/spotify-bot">Listen with me</a>)
-                </li>
-                -->
-              </ul>
             </div>
           </div>
 
@@ -135,6 +99,7 @@
 
       </div>
     </footer>
+    <script src="js/game-of-life.js"></script>
+    <script src="js/sketch.js"></script>
   </body>
-
 </html>
