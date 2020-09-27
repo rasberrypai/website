@@ -3,12 +3,13 @@ let pointCounter = 0;
 
 function setup(){
   let canvasContainer = document.getElementById("quadtree-canvas");
-  let canvasSize = parseInt(getComputedStyle(canvasContainer).width,10);
-  let renderer = createCanvas(canvasSize,canvasSize);
+  let canvasWidth = parseInt(getComputedStyle(canvasContainer).width,10);
+  let canvasHeight = parseInt(getComputedStyle(canvasContainer).height,10);
+  let renderer = createCanvas(canvasWidth,canvasHeight);
   renderer.parent(canvasContainer);
   background(50);
 
-  qtree = new QuadTree(new Rect(0,0,canvasSize,canvasSize),4);
+  qtree = new QuadTree(new Rect(0,0,canvasWidth,canvasHeight),4);
 }
 
 function draw(){

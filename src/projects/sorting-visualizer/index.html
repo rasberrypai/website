@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../files/css/minima/styles.css">
+    <link rel="stylesheet" href="../../files/css/minima/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="https://cdn.jsdelivr.net/npm/p5@1.1.9/lib/p5.js"></script>
   </head>
 
@@ -14,7 +15,7 @@
     <!--top bar-->
     <header class="site-header">
       <div class="wrapper">
-        <a class="site-title" rel="author" href="../">Ajay Pai</a>
+        <a class="site-title" rel="author" href="../../">Ajay Pai</a>
 
         <!--hamburger menu (ios only)-->
           <nav class="site-nav">
@@ -30,7 +31,7 @@
             <!--nav bar/hamburger menu content-->
             <div class="trigger">
                 <!--<a class="page-link" href="rasberrypai.github.io/website">Projects</a>-->
-                <a class="page-link" href="../about">About Me</a>
+                <a class="page-link" href="../../about">About Me</a>
             </div>
           </nav>
       </div>
@@ -41,12 +42,42 @@
         <article class="post">
 
           <header class="post-header">
-            <h1 class="post-title">Quadtree</h1>
+            <h1 class="post-title">Sorting Visualizer</h1>
             <p class="post-meta">September 12, 2020</p>
           </header>
           <div class="post-content">
-            <div id="quadtree-canvas-container">
-              <div id="quadtree-canvas"></div>
+            <p>
+              Chances are if you have ever written code you’ve tried sorting a set of data. There are many different sorting algorithms, each has its own advantages and limitations
+              but, with most programming languages having built-in tim/quick sort it’s unlikely that most people will ever have to implement a sorting algorithm (outside of the classroom).
+              In this project I created a colorful visualizer with adjustable parameters to illustrate the effectiveness of each algorithm.
+            </p>
+            <div id="sorting-visualizer-flex-box">
+              <div id="sorting-visualizer-container">
+                <div id="sorting-visualizer-nav">
+                  <select id="sorting-visualizer-select" onchange="ChangeSort()">
+                    <option value="Selection Sort">Selection Sort</option>
+                    <option value="Merge Sort">Merge Sort</option>
+                  </select>
+                </div>
+                <div id="sorting-visualizer-canvas"></div>
+                <div id="sorting-visualizer-ui"</div>
+                  <ul id="sorting-visualizer-buttons">
+                    <li><button class="sorting-visualizer-button" onclick="Play()" style="margin-right: 5px">Play</button></li>
+                    <li><button class="sorting-visualizer-button" onclick="Pause()" style="margin-right: 5px">Pause</button></li>
+                    <li><button class="sorting-visualizer-button" onclick="Restart()">Restart</button></li>
+                  </ul>
+                  <ul id="sorting-visualizer-sliders">
+                    <li>
+                      <label for="size-slider">Size:</label>
+                      <input type="range" min="10" max="1000" value="50" class="sorting-visualizer-slider" id="size-slider" onchange="ChangeSize()" style="margin-right: 5px">
+                    </li>
+                    <li>
+                      <label for="speed-slider">Speed:</label>
+                      <input type="range" min="1" max="60" value="60" class="sorting-visualizer-slider" id="speed-slider" onchange="ChangeSpeed()">
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
 
@@ -79,7 +110,8 @@
 
       </div>
     </footer>
-    <script src="js/quadtree.js"></script>
+    <script src="js/selection-sort.js"></script>
+    <script src="js/merge-sort.js"></script>
     <script src="js/sketch.js"></script>
   </body>
 </html>
